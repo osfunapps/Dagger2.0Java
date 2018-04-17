@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 
 import com.osapps.capitalslearnproject.fragmentactivity.frags.detail.presentation.DetailFragmentPresenter
+import com.osapps.capitalslearnproject.infrastructure.LocalRepository
 
 import javax.inject.Inject
 
@@ -22,6 +23,8 @@ import dagger.android.support.DaggerFragment
 class DetailFragment : DaggerFragment(), DetailFragmentView {
 
     @Inject lateinit var detailFragmentPresenter: DetailFragmentPresenter
+
+    @Inject lateinit var localRepository: LocalRepository
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return super.onCreateView(inflater, container, savedInstanceState)
@@ -37,12 +40,6 @@ class DetailFragment : DaggerFragment(), DetailFragmentView {
     }
 
     companion object {
-
-        fun newInstance(): DetailFragment {
-            val args = Bundle()
-            val fragment = DetailFragment()
-            fragment.arguments = args
-            return fragment
-        }
+        fun newInstance() = DetailFragment()
     }
 }

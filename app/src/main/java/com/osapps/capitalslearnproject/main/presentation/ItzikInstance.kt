@@ -1,5 +1,6 @@
 package com.osapps.capitalslearnproject.main.presentation
 
+import com.osapps.capitalslearnproject.infrastructure.LocalRepository
 import javax.inject.Inject
 
 /**
@@ -7,9 +8,10 @@ import javax.inject.Inject
  */
 class ItzikInstance @Inject constructor(var subItzikInstance: SubItzikInstance) {
 
+    @Inject lateinit var localRepository: LocalRepository
+
     fun talkItzik() {
         subItzikInstance.timeAfterTime()
-
     }
 
 

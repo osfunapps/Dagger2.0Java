@@ -11,6 +11,6 @@ import dagger.android.ContributesAndroidInjector
  */
 @Module
 abstract class DetailFragmentProvider {
-    @ContributesAndroidInjector(modules = [(DetailFragmentModule::class)])
+    @ContributesAndroidInjector(modules = [DetailFragmentModule::class]) //the specific module of the fragment
     internal abstract fun provideDetailFragmentFactory(): DetailFragment
 }

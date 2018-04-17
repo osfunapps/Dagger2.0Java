@@ -18,9 +18,16 @@ import dagger.android.DaggerApplication
 class App : DaggerApplication() {
 
 
+    //this method meant to create the app component and return it to the dagger
     override fun applicationInjector(): AndroidInjector<out DaggerApplication> {
+
+        //build the app component
         val appComponent = DaggerAppComponent.builder().application(this).build()
+
+        //inject the app into it
         appComponent.inject(this)
+
+        //return the app component
         return appComponent
     }
 }

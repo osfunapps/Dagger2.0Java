@@ -5,6 +5,5 @@ package com.osapps.capitalslearnproject.fragmentactivity.frags.detail.view
  */
 
 interface DetailFragmentView {
-
     fun onDetailFragmentLoaded()
 }
